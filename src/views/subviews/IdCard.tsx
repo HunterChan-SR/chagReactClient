@@ -1,4 +1,4 @@
-import {Button, Image} from "antd";
+import {Button} from "antd";
 import React, {useEffect, useState} from "react";
 import RankImage from "./RankImage";
 import {BeanUser} from "../../bean/BeanUser";

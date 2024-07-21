@@ -1,4 +1,4 @@
-import {Button, Form, Modal, Table} from "antd";
+import {Button, Modal, Table} from "antd";
 import {useEffect, useState} from "react";
 import {BeanSubmit} from "../../bean/BeanSubmit";
 import axios from "axios";
@@ -38,7 +38,7 @@ export default function SubListModal({problemID}: { problemID: number }) {
                 }).catch((error) => {
                 alert(error);
             })
-        }, [setDataSource]);
+        }, [setDataSource, problemID]);
 
 
     return (

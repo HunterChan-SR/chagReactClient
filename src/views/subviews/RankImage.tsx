@@ -1,4 +1,4 @@
-import {Button, Image} from 'antd';
+import { Image} from 'antd';
 import React, {useState, useEffect} from 'react';
 import ico from '../../images/ico.jpg'
 import challenger from '../../images/challenger.png';

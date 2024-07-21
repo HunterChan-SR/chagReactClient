@@ -1,4 +1,4 @@
-import {Button, Table} from "antd";
+import { Table} from "antd";
 import {BeanUser} from "../bean/BeanUser";
 import {useEffect, useState} from "react";
 import axios from "axios";

@@ -1,13 +1,13 @@
-import {HashRouter, Link, Outlet, Route, Routes, useNavigate} from "react-router-dom";
-import {Button, Image, Menu, MenuProps} from "antd";
+import { Link, Outlet, Route, Routes, useNavigate} from "react-router-dom";
+import { Menu, MenuProps} from "antd";
 import Settings from "../views/Settings";
 import Contests from "../views/Contests";
 import Users from "../views/Users";
 import {API_URL} from "../config";
 import axios from "axios";
-import {Children, useEffect, useState} from "react";
+import { useEffect, useState} from "react";
 import IdCard from "../views/subviews/IdCard";
-import SubMenu from "antd/lib/menu/SubMenu";
+// import SubMenu from "antd/lib/menu/SubMenu";
 import Login from "../views/Login";
 import Exit from '../views/Exit'
 import {BeanUser} from "../bean/BeanUser";

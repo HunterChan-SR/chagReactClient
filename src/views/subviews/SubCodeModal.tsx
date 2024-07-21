@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Button, Input, Modal} from 'antd';
 import axios from "axios";
 import {API_URL} from "../../config";
-import {useParams} from "react-router-dom";
+// import {useParams} from "react-router-dom";
 
 export default function SubCodeModal({problemID}: { problemID: number }) {
     //获取父组件参数
