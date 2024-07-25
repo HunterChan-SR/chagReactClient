@@ -86,7 +86,6 @@ export default function Problems() {
 
     return (
         <div>
-          
             <Table dataSource={data} columns={columns}>
             </Table>
         </div>

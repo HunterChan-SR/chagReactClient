@@ -12,6 +12,8 @@ import Login from "../views/Login";
 import Exit from '../views/Exit'
 import {BeanUser} from "../bean/BeanUser";
 import Problems from "../views/Problems";
+import NeedHelpDays from "../views/NeedHelpDays";
+import NeedHelp from "../views/NeedHelp";
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -52,6 +54,11 @@ function CLayout() {
             label: '积分榜',
             key: 'users',
             icon: <Link to='users'></Link>,
+        },
+        {
+          label: '提问',
+          key: 'needhelps',
+          icon: <Link to='needhelps'></Link>,
         },
         {
             label: '设置',
@@ -107,6 +114,8 @@ function CLayout() {
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/exit" element={<Exit/>}/>
                 <Route path="/contest/:id" element={<Problems/>}/>
+                <Route path="/needhelps" element={<NeedHelpDays/>}/>
+                <Route path="/needhelp/:id" element={<NeedHelp/>}/>
                 {/*    默认路由*/}
                 <Route path="*" element={<Users/>}/>
             </Routes>
