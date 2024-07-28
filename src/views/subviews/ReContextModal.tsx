@@ -14,12 +14,12 @@ export default function ReContextModal({id}: { id: number }) {
     const [disabled, setDisabled] = useState(false)
 
 
-    const [hiddenButton, setHiddenButton] = useState(true)
-    useEffect(() => {
-        if (localStorage.getItem('userid') === '1') {
-            setHiddenButton(false)
-        }
-    }, []);
+    const [hiddenButton, setHiddenButton] = useState(false)
+    // useEffect(() => {
+    //     if (localStorage.getItem('userid') === '1') {
+    //         setHiddenButton(false)
+    //     }
+    // }, []);
 
     function subReContext() {
         setLoading(true);
@@ -31,9 +31,10 @@ export default function ReContextModal({id}: { id: number }) {
         }
         const postData = {
             recontext: code,
-            id: id
+            needhelpid: id,
+            userid:  parseInt(localStorage.getItem('userid') as string)
         }
-        axios.post(API_URL + '/needhelp/recontext', postData, {
+        axios.post(API_URL + '/recontext', postData, {
             headers: {
                 Authorization: localStorage.getItem('token')
             }
@@ -60,7 +61,7 @@ export default function ReContextModal({id}: { id: number }) {
                     onClick={() => {
                         setOpen(true)
                     }}>
-                解答
+                我要解答
             </Button>
             <Modal open={open} title="提交解答"
                    onCancel={() => {

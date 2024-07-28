@@ -6,6 +6,7 @@ import axios from "axios";
 import {API_URL} from "../config";
 import ReContextModal from "./subviews/ReContextModal";
 import ContextModal from "./subviews/ContextModal";
+import {ReContextListModal} from "./subviews/ReContextListModal";
 
 export default function NeedHelp() {
     const navigate = useNavigate()
@@ -35,11 +36,6 @@ export default function NeedHelp() {
             key: 'context'
         },
         {
-            title: '回答',
-            dataIndex: 'recontext',
-            key: 'recontext'
-        },
-        {
             title: '创建日期',
             dataIndex: 'createtime',
             key: 'createtime'
@@ -57,6 +53,8 @@ export default function NeedHelp() {
         return {
             ...item,
             key: item.id,
+            problemtitle: <Typography.Text copyable={false}>{item.problemtitle.split('\n').map((line, index) =>
+                <Fragment key={index}>{line}<br/></Fragment>)}</Typography.Text>,
             subcode: <Typography.Text copyable={false}>{
                 item.subcode.split('\n').map((line, index) =>
                     <Fragment key={index}>{line}<br/></Fragment>)
@@ -64,9 +62,13 @@ export default function NeedHelp() {
             //subcode: <TextArea name="code" rows={50} value={item.subcode} disabled={true}/>,
             context: <Typography.Text>{item.context.split('\n').map((line, index) =>
                 <Fragment key={index}>{line}<br/></Fragment>)}</Typography.Text>,
-            recontext: <Typography.Text>{item.recontext.split('\n').map((line, index) =>
-                <Fragment key={index}>{line}<br/></Fragment>)}</Typography.Text>,
-            action: <ReContextModal id={item.id}/>
+           // recontext: <Typography.Text>{item.recontext.split('\n').map((line, index) =>
+            //    <Fragment key={index}>{line}<br/></Fragment>)}</Typography.Text>,
+            action:<>
+                <ReContextListModal id={item.id} />
+                <ReContextModal id={item.id}/>
+            </>
+
         }
     })
 
