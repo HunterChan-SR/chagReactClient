@@ -1,5 +1,5 @@
 import {Fragment, useEffect, useState} from "react";
-import {BeanSubmit} from "../../bean/BeanSubmit";
+
 import axios from "axios";
 import {API_URL} from "../../config";
 import {Button, Modal, Table, Typography} from "antd";
@@ -64,7 +64,7 @@ export function ReContextListModal({id}: { id: number }) {
         }).catch((error) => {
             alert(error);
         })
-    }, [setDataSource, setSolved]);
+    }, [setDataSource, setSolved, id]);
 
 
     return (
@@ -84,7 +84,7 @@ export function ReContextListModal({id}: { id: number }) {
                 }}
             >
                 <>
-                    <Table dataSource={dataSource} columns={columns}>
+                    <Table dataSource={data} columns={columns}>
 
                     </Table>
                 </>

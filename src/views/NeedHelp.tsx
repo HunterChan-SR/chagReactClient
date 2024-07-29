@@ -1,5 +1,5 @@
 import {useNavigate, useParams} from "react-router-dom";
-import {Button, Input, Table, Typography} from "antd";
+import {  Table, Typography} from "antd";
 import {Fragment, useEffect, useState} from "react";
 import {BeanNeedhelpView} from "../bean/BeanNeedhelp";
 import axios from "axios";
@@ -10,7 +10,7 @@ import {ReContextListModal} from "./subviews/ReContextListModal";
 
 export default function NeedHelp() {
     const navigate = useNavigate()
-    const {TextArea} = Input;
+
     const {id} = useParams()
     const [dataSource, setDataSource] =
         useState<BeanNeedhelpView[]>()

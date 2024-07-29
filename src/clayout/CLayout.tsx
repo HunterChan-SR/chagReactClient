@@ -14,6 +14,7 @@ import {BeanUser} from "../bean/BeanUser";
 import Problems from "../views/Problems";
 import NeedHelpDays from "../views/NeedHelpDays";
 import NeedHelp from "../views/NeedHelp";
+import SavedFiles from "../views/SavedFiles";
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -59,6 +60,11 @@ function CLayout() {
           label: '提问',
           key: 'needhelps',
           icon: <Link to='needhelps'></Link>,
+        },
+        {
+            label: '文件',
+            key: 'savedfiles',
+            icon: <Link to='savedfiles'></Link>,
         },
         {
             label: '设置',
@@ -116,6 +122,7 @@ function CLayout() {
                 <Route path="/contest/:id" element={<Problems/>}/>
                 <Route path="/needhelps" element={<NeedHelpDays/>}/>
                 <Route path="/needhelp/:id" element={<NeedHelp/>}/>
+                <Route path="/savedfiles" element={<SavedFiles/>}/>
                 {/*    默认路由*/}
                 <Route path="*" element={<Users/>}/>
             </Routes>
