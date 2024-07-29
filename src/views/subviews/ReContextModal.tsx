@@ -1,5 +1,5 @@
 import {Button, Input, Modal} from "antd";
-import React, {useEffect, useState} from "react";
+import React, { useState} from "react";
 import axios from "axios";
 import {API_URL} from "../../config";
 
@@ -14,7 +14,7 @@ export default function ReContextModal({id}: { id: number }) {
     const [disabled, setDisabled] = useState(false)
 
 
-    const [hiddenButton, setHiddenButton] = useState(false)
+    // const [hiddenButton, setHiddenButton] = useState(false)
     // useEffect(() => {
     //     if (localStorage.getItem('userid') === '1') {
     //         setHiddenButton(false)
@@ -57,7 +57,7 @@ export default function ReContextModal({id}: { id: number }) {
 
     return (
         <div>
-            <Button hidden={hiddenButton} type={'primary'} danger={false} block={false}
+            <Button  type={'primary'} danger={false} block={false}
                     onClick={() => {
                         setOpen(true)
                     }}>

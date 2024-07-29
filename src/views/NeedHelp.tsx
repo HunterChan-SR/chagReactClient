@@ -41,7 +41,12 @@ export default function NeedHelp() {
             key: 'createtime'
         },
         {
-            title: '解答',
+            title: '查看解答',
+            dataIndex: 'actionList',
+            key: 'actionList'
+        },
+        {
+            title: '我要解答',
             dataIndex: 'action',
             key: 'action'
         }
@@ -64,10 +69,8 @@ export default function NeedHelp() {
                 <Fragment key={index}>{line}<br/></Fragment>)}</Typography.Text>,
            // recontext: <Typography.Text>{item.recontext.split('\n').map((line, index) =>
             //    <Fragment key={index}>{line}<br/></Fragment>)}</Typography.Text>,
-            action:<>
-                <ReContextListModal id={item.id} />
-                <ReContextModal id={item.id}/>
-            </>
+            actionList:<ReContextListModal id={item.id} />,
+            action: <ReContextModal id={item.id}/>
 
         }
     })

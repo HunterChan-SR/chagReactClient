@@ -73,7 +73,7 @@ export function ReContextListModal({id}: { id: number }) {
                 setOpen(true)
             }}>查看解答</Button>
             <Modal
-                width={2000}
+                width={1000}
                 title="解答列表"
                 open={open}
                 onOk={() => {
